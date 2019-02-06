@@ -1,0 +1,27 @@
+
+<div class="container text-center">
+
+  <h1>Bienvenue sur notre site Gossip!</h1>
+  <p>Tous nos Gossip sont dans la liste ci dessous classé par auteur et par titre</p>
+
+	<div class="card-columns">
+			<% @potins.each do |gossip| %>
+
+	      <div class="card" style="width: 18rem;">
+	      	<div class="card-body">
+	    			<h5 class="card-title"><%= gossip.user.f_name + ' ' + gossip.user.l_name + " : " %></h5>
+	    			<p class="card-text"><%= link_to gossip.title, potin_path(gossip.id), :class => "link"%></p>
+	    		</div>
+  			</div>
+  		
+  		<% end %>
+	</div>
+	
+	<div class="container text-center"> 
+	<h3>Hey ! Tu as un potin à nous raconter ?? </h3>
+	<p><a class="link" href="/user">Alors clique ici tout de suite et raconte !</a></p>
+	</div>
+
+</div>
+
+
